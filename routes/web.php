@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * MASTER
+ */
+// Role
+Route::resource('/master/role', 'Master\Role');
+
 Route::get('/', function () {
     return view('welcome');
 });
