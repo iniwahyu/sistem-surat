@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class MasterRoleModel extends Model
 {
     use HasFactory;
-    protected $table = 'master_role';
+    protected $table    = 'master_role';
     protected $dates    = ['deleted_at'];
     protected $fillable = [
         'nama',
