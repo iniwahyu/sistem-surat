@@ -97,7 +97,16 @@ class Role extends Controller
      */
     public function edit($id)
     {
-        //
+        // Variable
+        $title = 'Ubah Role';
+        $url = $this->url;
+        $id = $id;
+
+        // Get Data
+        $roles = $this->mMasterRole->where('id', $id)->first();
+
+        // View
+        return view("$this->views/edit", compact('title', 'url', 'id', 'roles'));
     }
 
     /**
@@ -109,7 +118,19 @@ class Role extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Validate
+        $request->validate([
+            'nama' => 'required|unique:master_role,nama,'.$id,
+        ]);
+
+        // Table master_role
+        $dataMasterRole = [
+            'nama' => $request->nama,
+        ];
+        $this->mMasterRole->where('id', $id)->update($dataMasterRole);
+
+        // Response
+        return redirect("$this->url")->with('sukses', 'Role Berhasil Diubah');
     }
 
     /**
