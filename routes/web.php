@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
  * MASTER
  */
 // Role
+Route::get('/master/role/get-data', 'Master\Role@getData');
 Route::resource('/master/role', 'Master\Role');
 
 Route::get('/', function () {

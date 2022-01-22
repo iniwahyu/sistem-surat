@@ -38,6 +38,23 @@ class Role extends Controller
         return view("$this->views/index", compact('title', 'url', 'roles'));
     }
 
+    public function getData()
+    {
+        $data = $this->mMasterRole->all();
+        return \DataTables::of($data)
+            ->addIndexColumn()
+            ->addColumn('actions', function($data) {
+                return '<div class="btn-group" role="group" aria-label="Basic example">
+                        <a href="'. url("$this->url/$data->id/edit") .'" class="btn btn-primary">Edit</a>
+                        <a href="javascript:void(0);" class="btn btn-danger delete" data-id="'. $data->id .'">Delete</a>
+                    </div>';
+                // return '<button type="button" class="btn btn-success btn-sm" data-id="'.$data->id.'">Edit</button>
+                //     <button type="button" data-id="'.$data->id.'" data-toggle="modal" data-target="#delete-modal" class="btn btn-danger btn-sm" id="delete">Delete</button>';
+            })
+            ->rawColumns(['actions'])
+            ->make(true);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -141,6 +158,14 @@ class Role extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->mMasterRole->findOrFail($id)->delete();
+
+        // Response
+        $response = [
+            'status' => true,
+            'code' => 200,
+            'message' => 'Berhasil Dihapus',
+        ];
+        return response()->json($response);
     }
 }
