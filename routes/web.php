@@ -20,6 +20,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/master/role/get-data', 'Master\Role@getData');
 Route::resource('/master/role', 'Master\Role');
 
+/**
+ * OTHER
+ */
+// User
+Route::get('/user/get-data', 'User@getData');
+Route::resource('/user', 'User');
+
 Route::get('/', function () {
     return view('welcome');
 });
