@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Dashboard - Mazer Admin Dashboard</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -14,7 +15,9 @@
 
     <link rel="stylesheet" href="{{ url('') }}/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="{{ url('') }}/assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    @yield('css-library')
     <link rel="stylesheet" href="{{ url('') }}/assets/css/app.css">
+    @yield('css')
     <link rel="shortcut icon" href="{{ url('') }}/assets/images/favicon.svg" type="image/x-icon">
 </head>
 
@@ -49,13 +52,12 @@
             </footer>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="{{ url('') }}/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="{{ url('') }}/assets/js/bootstrap.bundle.min.js"></script>
-
-    <script src="{{ url('') }}/assets/vendors/apexcharts/apexcharts.js"></script>
-    <script src="{{ url('') }}/assets/js/pages/dashboard.js"></script>
-
+    @yield('js-library')
     <script src="{{ url('') }}/assets/js/mazer.js"></script>
+    @yield('js')
 </body>
 
 </html>
