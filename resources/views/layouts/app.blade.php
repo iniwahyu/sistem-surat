@@ -55,6 +55,14 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="{{ url('') }}/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="{{ url('') }}/assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let baseUrl = '{{ url('') }}';
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
     @yield('js-library')
     <script src="{{ url('') }}/assets/js/mazer.js"></script>
     @yield('js')
