@@ -77,23 +77,6 @@
                     }
                 })
             }
-            console.log($(this).data('id'));
-            // function deleteFunc(id){
-            //     if (confirm("Delete Record?") == true) {
-            //         var id = id;
-            //         // ajax
-            //         $.ajax({
-            //             type:"POST",
-            //             url: "{{ url('delete-company') }}",
-            //             data: { id: id },
-            //             dataType: 'json',
-            //             success: function(res){
-            //                 var oTable = $('#ajax-crud-datatable').dataTable();
-            //                 oTable.fnDraw(false);
-            //             }
-            //         });
-            //     }
-            // }
         })
     })
 </script>
