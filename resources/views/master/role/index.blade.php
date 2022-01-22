@@ -10,6 +10,11 @@
 @endsection
 
 @section('content')
+<div class="row mb-3">
+    <div class="col-lg-4">
+        <a href="{{ url("$url/create") }}" class="btn btn-primary">Tambah Data</a>
+    </div>
+</div>
 <div class="row">
     <div class="col-sm-12">
         <div class="card">

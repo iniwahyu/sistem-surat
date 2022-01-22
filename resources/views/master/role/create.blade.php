@@ -9,6 +9,11 @@
 @endsection
 
 @section('content')
+<div class="row mb-3">
+    <div class="col-lg-4">
+        <a href="{{ url("$url") }}" class="btn btn-primary">Kembali</a>
+    </div>
+</div>
 <div class="row">
     <div class="col-lg-6">
         <div class="card">
