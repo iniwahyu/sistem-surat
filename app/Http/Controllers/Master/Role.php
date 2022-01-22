@@ -48,8 +48,6 @@ class Role extends Controller
                         <a href="'. url("$this->url/$data->id/edit") .'" class="btn btn-primary">Edit</a>
                         <a href="javascript:void(0);" class="btn btn-danger delete" data-id="'. $data->id .'">Delete</a>
                     </div>';
-                // return '<button type="button" class="btn btn-success btn-sm" data-id="'.$data->id.'">Edit</button>
-                //     <button type="button" data-id="'.$data->id.'" data-toggle="modal" data-target="#delete-modal" class="btn btn-danger btn-sm" id="delete">Delete</button>';
             })
             ->rawColumns(['actions'])
             ->make(true);
