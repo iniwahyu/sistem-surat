@@ -28,6 +28,10 @@ Route::resource('/master/jenis', 'Master\Jenis');
 Route::get('/master/asal/get-data', 'Master\Asal@getData');
 Route::resource('/master/asal', 'Master\Asal');
 
+// Disposisi
+Route::get('/master/disposisi/get-data', 'Master\Disposisi@getData');
+Route::resource('/master/disposisi', 'Master\Disposisi');
+
 /**
  * OTHER
  */
