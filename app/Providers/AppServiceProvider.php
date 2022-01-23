@@ -25,5 +25,8 @@ class AppServiceProvider extends ServiceProvider
     {
         // App
         view()->share('appTemplate', 'layouts/app');
+
+        // App Auth
+        view()->share('appAuthTemplate', 'layouts/app_auth');
     }
 }
