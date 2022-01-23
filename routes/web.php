@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 /**
+ * AUTH
+ */
+Route::get('/login', 'Auth@login');
+Route::post('/login-proses', 'Auth@loginProses');
+Route::get('/logout', 'Auth@logout');
+
+/**
  * MASTER
  */
 // Role
