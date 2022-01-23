@@ -20,6 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/master/role/get-data', 'Master\Role@getData');
 Route::resource('/master/role', 'Master\Role');
 
+// Jenis Surat
+Route::get('/master/jenis/get-data', 'Master\Jenis@getData');
+Route::resource('/master/jenis', 'Master\Jenis');
+
 /**
  * OTHER
  */
