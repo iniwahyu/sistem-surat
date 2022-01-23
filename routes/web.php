@@ -24,6 +24,10 @@ Route::resource('/master/role', 'Master\Role');
 Route::get('/master/jenis/get-data', 'Master\Jenis@getData');
 Route::resource('/master/jenis', 'Master\Jenis');
 
+// Asal Surat
+Route::get('/master/asal/get-data', 'Master\Asal@getData');
+Route::resource('/master/asal', 'Master\Asal');
+
 /**
  * OTHER
  */
