@@ -42,9 +42,13 @@ Route::resource('/master/disposisi', 'Master\Disposisi');
 /**
  * OTHER
  */
+// Dashboard
+Route::get('/dashboard', 'Dashboard@index');
+
 // User
 Route::get('/user/get-data', 'User@getData');
 Route::resource('/user', 'User');
+
 
 Route::get('/', function () {
     return view('welcome');
