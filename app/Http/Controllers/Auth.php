@@ -52,6 +52,7 @@ class Auth extends Controller
 
             // Set Session
             $setSession = [
+                'users_id' => $users->id,
                 'username' => $users->username,
                 'role_id' => $users->role_id,
                 'last_login' => $users->last_login,
