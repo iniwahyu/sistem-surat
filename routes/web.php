@@ -49,6 +49,9 @@ Route::get('/dashboard', 'Dashboard@index');
 Route::get('/user/get-data', 'User@getData');
 Route::resource('/user', 'User');
 
+// Surat
+Route::get('/surat/get-data', 'Surat@getData');
+Route::resource('/surat', 'Surat');
 
 Route::get('/', function () {
     return view('welcome');

@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class UserModel extends Model
 {
     use HasFactory;
+    use SoftDeletes;
     protected $table    = 'users';
     protected $dates    = ['deleted_at'];
     protected $fillable = [
@@ -30,6 +31,7 @@ class UserModel extends Model
         $query = DB::table('users AS u');
         $query->selectRaw('u.`id`, u.`username`, mrole.`nama` AS nama_role, u.`last_login`');
         $query->join('master_role AS mrole', 'mrole.id', '=', 'u.role_id');
+        $query->whereNull('u.deleted_at');
         return $query;
     }
 }
